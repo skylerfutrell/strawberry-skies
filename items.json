@@ -1,47 +1,46 @@
 {
-    "music": [
-        {
-            "id": 1,
-            "name": "Strawberry Street",
-            "price": 1299,
-            "imgName": "strawberrystreet.png"
-        },
+  "music": [
+    {
+      "id": 1,
+      "name": "Strawberry Street",
+      "price": 1299,
+      "imgName": "strawberrystreet.png"
+    },
 
-        {
-            "id": 2,
-            "name": "Daydream Delight",
-            "price": 1499,
-            "imgName": "daydreamdelight.png"
-        },
+    {
+      "id": 2,
+      "name": "Daydream Delight",
+      "price": 1499,
+      "imgName": "daydreamdelight.png"
+    },
 
-        {
-            "id": 3,
-            "name": "Ballads",
-            "price": 2299,
-            "imgName": "ballads.png"
-        },
+    {
+      "id": 3,
+      "name": "Ballads",
+      "price": 2299,
+      "imgName": "ballads.png"
+    },
 
-        {
-            "id": 4,
-            "name": "Skies Blush",
-            "price": 1699,
-            "imgName": "skiesblush.png"
-        }
-    ],
-    "merch": [
-        {
-            "id": 5,
-            "name": "T-Shirt",
-            "price": 1999,
-            "imgName": "tshirt.png"
-        },
+    {
+      "id": 4,
+      "name": "Skies Blush",
+      "price": 1699,
+      "imgName": "skiesblush.png"
+    }
+  ],
+  "merch": [
+    {
+      "id": 5,
+      "name": "T-Shirt",
+      "price": 1999,
+      "imgName": "tshirt.png"
+    },
 
-        {
-            "id": 6,
-            "name": "Coffee Cup",
-            "price": 599,
-            "imgName": "coffeecup.png"
-        }
-
-    ]
+    {
+      "id": 6,
+      "name": "Coffee Cup",
+      "price": 599,
+      "imgName": "coffeecup.png"
+    }
+  ]
 }
