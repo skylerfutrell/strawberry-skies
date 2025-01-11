@@ -26,6 +26,59 @@ function ready() {
   document
     .getElementsByClassName("btn-purchase")[0]
     .addEventListener("click", purchaseClicked);
+
+  // Stripe Integration
+  const stripe = Stripe('<%= stripePublicKey %>'); // Use the Stripe public key from EJS
+  const elements = stripe.elements();
+  const card = elements.create("card"); 
+  card.mount("#card-element"); 
+
+  // Handle form submission for payment
+  const form = document.getElementById("payment-form");
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    // Create a payment method using the card details
+    const { error, paymentMethod } = await stripe.createPaymentMethod("card", card);
+
+    if (error) {
+      // Handle errors if any
+      alert("Error: " + error.message);
+    } else {
+      // Prepare items data and send to the server
+      const cartItems = [];
+      const cartRows = document.getElementsByClassName("cart-row");
+      for (let i = 0; i < cartRows.length; i++) {
+        const row = cartRows[i];
+        const title = row.getElementsByClassName("cart-item-title")[0].innerText;
+        const price = parseFloat(row.getElementsByClassName("cart-price")[0].innerText.replace("$", ""));
+        const quantity = parseInt(row.getElementsByClassName("cart-quantity-input")[0].value);
+        cartItems.push({ title, price, quantity });
+      }
+
+      // Send the payment method ID and cart items to the server
+      const response = await fetch("/purchase", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          stripePaymentMethodId: paymentMethod.id,
+          items: cartItems,
+        }),
+      });
+
+      const result = await response.json();
+      if (result.message) {
+        // If successful, display the success message
+        alert(result.message);
+        // Optionally, clear the cart or update the UI
+        clearCart();
+      } else {
+        alert("Payment failed. Please try again.");
+      }
+    }
+  });
 }
 
 function purchaseClicked() {
@@ -109,4 +162,13 @@ function updateCartTotal() {
   total = Math.round(total * 100) / 100;
   document.getElementsByClassName("cart-total-price")[0].innerText =
     "$" + total;
+}
+
+// Clear cart after successful purchase
+function clearCart() {
+  var cartItems = document.getElementsByClassName("cart-items")[0];
+  while (cartItems.hasChildNodes()) {
+    cartItems.removeChild(cartItems.firstChild);
+  }
+  updateCartTotal();
 }
