@@ -53,10 +53,10 @@
 
 Prerequisites:
 - A modern web browser.
-- Node.js: The runtime environment to run JavaScript on the server side. You can download it from here.
+- Node.js: The runtime environment to run JavaScript on the server side. [You can download it from here](https://nodejs.org/en/download).
 - npm: The Node.js package manager, which comes bundled with Node.js. It is used to install project dependencies.
 - Stripe Account: You’ll need a Stripe account to manage payments. Sign up at Stripe.
-- Git: A version control tool for managing your project code. You can download it from here.
+- Git: A version control tool for managing your project code. [You can download it from here](https://git-scm.com/downloads).
 
 Installation & Usage:
 
