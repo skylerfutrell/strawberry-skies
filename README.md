@@ -165,8 +165,6 @@ To customize the website or its functionality, you'll primarily need to modify t
 5. .env:
    - Update the environment variables for your Stripe keys and other sensitive data. Ensure this file is kept secure and excluded from version control.
 
-Screenshots:
-
 License:
 
     This project is open-source and available under the MIT License. Feel free to use, modify, and distribute it.
@@ -176,4 +174,4 @@ Connect With Me:
 
 Website:
 
-LinkedIn::
+LinkedIn:
