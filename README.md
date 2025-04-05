@@ -172,6 +172,4 @@ License:
 
 Connect With Me:
 
-Website:
-
-LinkedIn:
+[Visit My Website](https://www.futrellstudioportfolio.com/)
